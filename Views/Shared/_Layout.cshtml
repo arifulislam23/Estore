@@ -45,14 +45,15 @@
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto">
-                        
+                        @* <partial name="~/Views/Shared/_LoginPartial.cshtml" /> *@
                     </div>
                     <div class="navbar-nav ml-auto">
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Login</a>
-                                <a href="#" class="dropdown-item">Register</a>
+                                <a class="dropdown-item" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                 
+                                <a class="dropdown-item" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
                             </div>
                         </div>
                     </div>
