@@ -1,0 +1,74 @@
+﻿<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Product
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a asp-action="ProductList" asp-controller="Products" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="ProductCreate" asp-controller="Products" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Create</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a asp-action="ContactList" asp-controller="Educuts" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+                <p>
+                    Contact List
+                </p>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Blog
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a asp-action="BlogList" asp-controller="Blogs" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>List</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="BlogCreate" asp-controller="Blogs" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Create</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a asp-action="SocialNetwork" asp-controller="SocialLinks" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+                <p>
+                    Social Network
+                </p>
+            </a>
+        </li>
+    </ul>
+</nav>
