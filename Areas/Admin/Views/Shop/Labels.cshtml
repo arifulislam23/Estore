@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Labels";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model IEnumerable<Estore.Areas.Admin.Models.Label>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Label List</h3>
+                <div class="card-tools">
+
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#createLabelModal">
+                        <i class="fas fa-plus"></i> Add New Label
+                    </button>
+                  
+
+
+                </div>
+            </div>
+            <!-- /.card-header -->
+
+            <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Label Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var label in Model)
+                            {
+                                <tr>
+                                    <td>@label.LableId</td>
+                                    <td>@label.LabelName</td>
+                                    <td>
+                                        <a asp-area="Admin" asp-controller="Label" asp-action="Edit" asp-route-id="@label.LableId" class="btn btn-info btn-sm">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </a>
+                                        <a asp-area="Admin" asp-controller="Label" asp-action="Delete" asp-route-id="@label.LableId" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="createLabelModal" tabindex="-1" aria-labelledby="createLabelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createLabelModalLabel">Create Label</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="createLabelForm">
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="LabelName">Label Name</label>
+                        <input type="text" id="LabelName" class="form-control" name="LabelName" placeholder="Enter label name" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+ 

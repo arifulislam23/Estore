@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Estore.Areas.Admin.Models;
 
 namespace Estore.Data
 {
@@ -21,6 +22,8 @@ namespace Estore.Data
             // Customize the ASP.NET Identity model and override the defaults if needed.
            
         }
+        public DbSet<Estore.Areas.Admin.Models.Product> Product { get; set; } = default!;
+        public DbSet<Estore.Areas.Admin.Models.Label> Label { get; set; } = default!;
 
         //new model add here
 
