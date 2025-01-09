@@ -35,6 +35,18 @@
                                 <label for="Category" class="control-label">Category</label>
                                 <input type="text" id="Category" class="form-control" name="Category" placeholder="Enter product category" />
                             </div>
+
+                            <div class="form-group">
+                                <label for="LableId" class="control-label">Labels</label>
+                                <select id="LableId" class="form-control" name="LableId">
+                                    <option value="">---Select Labels---</option>
+                                    @foreach (var labes in ViewBag.LabelList)
+                                    {
+                                        <option value="@labes.Value"> @labes.Text </option>
+                                    }
+                                </select>
+                            </div>
+
                             <div class="form-group">
                                 <label for="IsActive" class="control-label">Is Active</label>
                                 <select id="IsActive" class="form-control" name="IsActive">
@@ -42,6 +54,8 @@
                                     <option value="false">Inactive</option>
                                 </select>
                             </div>
+
+
                         </div>
                         <!-- /.col-md-8 -->
                         <!-- Right Section -->

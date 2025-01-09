@@ -86,5 +86,28 @@
         </div>
     </div>
 </div>
-
- 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#createLabelForm').on('submit', function (e) {
+            e.preventDefault();
+            alert("ok");
+            var formData = new FormData(this);
+            $.ajax({
+                url: '@Url.Action("LabelCreate", "Shop", new { area = "Admin" })',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response.success) {
+                        $('#createLabelModal').modal('hide');
+                    } 
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        });
+    });
+</script>

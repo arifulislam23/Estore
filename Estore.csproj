@@ -19,6 +19,10 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\User\Controllers\" />
+    <Folder Include="Areas\User\Data\" />
+    <Folder Include="Areas\User\Models\" />
+    <Folder Include="Areas\User\Views\" />
     <Folder Include="wwwroot\upload\" />
   </ItemGroup>
 

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Estore.Data
+@inject EstoreContext dbcontext;
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -174,6 +178,7 @@
     </div>
     <!-- Footer End -->
     <!-- Footer Bottom Start -->
+
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
@@ -182,7 +187,12 @@
                 </div>
 
                 <div class="col-md-6 template-by">
-                    <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+
+                    @{
+                        var temdata = dbcontext.Label.FirstOrDefault();
+                    }
+
+                    <p>@temdata.LabelName</a></p>
                 </div>
             </div>
         </div>

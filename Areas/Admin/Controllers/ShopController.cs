@@ -50,6 +50,13 @@ namespace Estore.Areas.Admin.Controllers
         // GET: Admin/Shop/Create
         public IActionResult Create()
         {
+            ViewBag.LabelList = _context.Label.Select(x=> new SelectListItem { 
+            
+                Value = x.LableId.ToString(),
+                Text = x.LabelName
+            
+            }).ToList();
+
             return View();
         }
 
