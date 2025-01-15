@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model Estore.Viewmodel.HomeVM;
+
+
 
 <!-- Main Slider Start -->
 <partial name="~/Views/Shared/Estore/Slider.cshtml" />
@@ -35,7 +38,7 @@
 <!-- Call to Action End -->
 
 <!-- Featured Product Start -->
-<partial name="~/Views/Shared/Estore/FeaturedProduct.cshtml" />
+<partial name="~/Views/Shared/Estore/FeaturedProduct.cshtml" model="Model.Product" />
 <!-- Featured Product End -->  
 
 <!-- Newsletter Start -->

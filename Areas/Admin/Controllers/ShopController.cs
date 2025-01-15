@@ -99,6 +99,13 @@ namespace Estore.Areas.Admin.Controllers
             _context.Product.Add(RealDataModel);
             _context.SaveChanges();
 
+            ViewBag.LabelList = _context.Label.Select(x => new SelectListItem
+            {
+
+                Value = x.LableId.ToString(),
+                Text = x.LabelName
+
+            }).ToList();
             return View(product);
         }
 
